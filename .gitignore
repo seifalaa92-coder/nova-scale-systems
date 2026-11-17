@@ -38,4 +38,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-NOVA-Scale-Systems-Code.zip 
+NOVA-Scale-Systems-Code.zip
+cloudflared.exe
+*.exe

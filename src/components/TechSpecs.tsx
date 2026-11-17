@@ -57,56 +57,56 @@ const COMPARISON_ROWS = [
 
 export default function TechSpecs() {
   return (
-    <section id="technical-inspection" className="py-24 md:py-36 relative bg-[#08080a] text-[#f4f4f6]">
+    <section id="technical-inspection" className="py-24 md:py-36 relative bg-[#fbfbfd] text-[#0e0e11]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-[#2997ff] uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0071e3] uppercase tracking-wider mb-4 font-semibold">
             <Layers className="w-3.5 h-3.5" />
             <span>Service Architecture Comparison</span>
           </div>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.038em] text-white mb-6">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.038em] text-[#0e0e11] mb-6">
             Compare the approach.
           </h2>
-          <p className="text-[#94949e] text-base md:text-lg leading-relaxed">
+          <p className="text-[#515154] text-base md:text-lg leading-relaxed">
             See how NOVA’s custom web architecture and business automations compare to generic agency retainers and basic DIY builders.
           </p>
         </div>
 
         {/* Comparison Table */}
         <div className="overflow-x-auto">
-          <div className="min-w-[720px] graphite-card rounded-3xl p-6 md:p-8 border border-white/[0.08] shadow-2xl bg-[#101014]">
+          <div className="min-w-[720px] apple-card rounded-3xl p-6 md:p-8 border border-black/[0.08] shadow-xl bg-white">
             <table className="w-full text-left border-collapse">
               <thead>
-                <tr className="border-b border-white/[0.08] text-xs uppercase tracking-wider">
-                  <th className="py-4 px-4 text-[#71717a] font-medium w-1/3">Core Capability</th>
-                  <th className="py-4 px-4 text-[#2997ff] font-bold w-1/3 bg-[#161622] rounded-t-xl border-t border-x border-[#0071e3]/30">
+                <tr className="border-b border-black/[0.08] text-xs uppercase tracking-wider">
+                  <th className="py-4 px-4 text-[#515154] font-medium w-1/3">Core Capability</th>
+                  <th className="py-4 px-4 text-[#0071e3] font-bold w-1/3 bg-blue-50 rounded-t-xl border-t border-x border-[#0071e3]/30">
                     <div className="flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-[#2997ff]" />
+                      <Sparkles className="w-4 h-4 text-[#0071e3]" />
                       <span>NOVA Scale Systems</span>
                     </div>
                   </th>
-                  <th className="py-4 px-4 text-[#71717a] font-medium w-1/6">Typical Agency</th>
-                  <th className="py-4 px-4 text-[#71717a] font-medium w-1/6">DIY Builders</th>
+                  <th className="py-4 px-4 text-[#86868b] font-medium w-1/6">Typical Agency</th>
+                  <th className="py-4 px-4 text-[#86868b] font-medium w-1/6">DIY Builders</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-white/[0.06] text-xs sm:text-sm">
+              <tbody className="divide-y divide-black/[0.06] text-xs sm:text-sm">
                 {COMPARISON_ROWS.map((row, index) => (
                   <tr
                     key={index}
-                    className={`transition-colors hover:bg-white/[0.02] ${
-                      row.highlight ? "bg-white/[0.01]" : ""
+                    className={`transition-colors hover:bg-black/[0.01] ${
+                      row.highlight ? "bg-black/[0.01]" : ""
                     }`}
                   >
-                    <td className="py-4 px-4 font-semibold text-white">{row.feature}</td>
-                    <td className="py-4 px-4 font-medium text-emerald-300 bg-[#161622] border-x border-[#0071e3]/20">
+                    <td className="py-4 px-4 font-semibold text-[#0e0e11]">{row.feature}</td>
+                    <td className="py-4 px-4 font-medium text-emerald-800 bg-blue-50/40 border-x border-[#0071e3]/20">
                       <div className="flex items-start gap-2">
-                        <Check className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <Check className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                         <span>{row.nova}</span>
                       </div>
                     </td>
-                    <td className="py-4 px-4 text-[#71717a]">{row.agency}</td>
-                    <td className="py-4 px-4 text-[#71717a]">{row.diy}</td>
+                    <td className="py-4 px-4 text-[#515154]">{row.agency}</td>
+                    <td className="py-4 px-4 text-[#515154]">{row.diy}</td>
                   </tr>
                 ))}
               </tbody>

@@ -35,7 +35,7 @@ const TRACKS: IndustryTrack[] = [
     icon: Briefcase,
     title: "Professional Services & Consultancies",
     number: "01",
-    badge: "Legal, Advisory, Accounting & Architecture",
+    badge: "Legal, Accounting, Engineering & Architecture",
     summary:
       "Transform high-value corporate visitors into booked client consultations without phone tag or manual administrative delays.",
     relevantOffers: [
@@ -56,7 +56,7 @@ const TRACKS: IndustryTrack[] = [
     ],
     focusArea: "Consultation Bookings & Partner Time Recovery",
     image: "/images/industry-professional-services.jpg",
-    imageAlt: "Contemporary corporate advisory boardroom with skyline view and polished marble conference table",
+    imageAlt: "Contemporary corporate office boardroom with skyline view and polished marble conference table",
   },
   {
     id: "clinics",
@@ -177,19 +177,19 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
   const activeTrack = TRACKS.find((t) => t.id === selectedTrackId) || TRACKS[0];
 
   return (
-    <section id="who-we-help" className="py-24 md:py-36 relative bg-[#08080a] text-[#f4f4f6]">
+    <section id="who-we-help" className="py-24 md:py-36 relative bg-[#fbfbfd] text-[#0e0e11]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[#2997ff] uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0071e3] uppercase tracking-wider mb-4 font-semibold">
             <Users className="w-3.5 h-3.5" />
             <span>Target SME Sectors</span>
           </div>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-[-0.038em] leading-[1.06] mb-6">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-[#0e0e11] tracking-[-0.038em] leading-[1.06] mb-6">
             Tailored to your exact <br />
-            <span className="text-[#2997ff]">business model.</span>
+            <span className="text-[#0071e3]">business model.</span>
           </h2>
-          <p className="text-[#94949e] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#515154] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Select your industry below to see how our six core services solve the most common operational bottlenecks
             and turn website visitors into clients.
           </p>
@@ -206,15 +206,15 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
                 onClick={() => setSelectedTrackId(track.id)}
                 className={`p-4 rounded-2xl text-left border transition-all cursor-pointer flex flex-col justify-between ${
                   isSelected
-                    ? "bg-[#14141a] text-white border-[#0071e3] shadow-lg shadow-blue-500/10 -translate-y-0.5"
-                    : "bg-[#101014] text-[#94949e] border-white/[0.08] hover:border-white/[0.18] hover:text-white"
+                    ? "bg-[#0e0e11] text-white border-[#0e0e11] shadow-md -translate-y-0.5"
+                    : "bg-white text-[#515154] border-black/[0.08] hover:border-black/[0.18] hover:text-[#0e0e11]"
                 }`}
               >
                 <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[10px] font-mono ${isSelected ? "text-[#2997ff]" : "text-[#71717a]"}`}>
+                  <span className={`text-[10px] font-mono ${isSelected ? "text-[#38bdf8]" : "text-[#86868b]"}`}>
                     INDEX / {track.number}
                   </span>
-                  <Icon className={`w-4 h-4 ${isSelected ? "text-[#2997ff]" : "text-[#71717a]"}`} />
+                  <Icon className={`w-4 h-4 ${isSelected ? "text-[#38bdf8]" : "text-[#86868b]"}`} />
                 </div>
                 <div className="font-semibold text-xs leading-snug">
                   {track.title}
@@ -225,7 +225,7 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
         </div>
 
         {/* Active Track Detailed Inspector Card */}
-        <div className="graphite-card rounded-3xl p-6 sm:p-10 md:p-12 border border-white/[0.08] shadow-2xl bg-[#101014] max-w-6xl mx-auto">
+        <div className="apple-card rounded-3xl p-6 sm:p-10 md:p-12 border border-black/[0.08] shadow-xl bg-white max-w-6xl mx-auto">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTrack.id}
@@ -238,28 +238,28 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
               {/* Left Column: Scope & Deliverables (7 cols) */}
               <div className="lg:col-span-7 space-y-6">
                 <div>
-                  <div className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-[#2997ff] bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3">
-                    <Sparkles className="w-3 h-3 text-[#2997ff]" />
+                  <div className="inline-flex items-center gap-2 text-[10px] font-mono uppercase tracking-wider text-[#0071e3] bg-blue-50 px-3 py-1 rounded-full border border-blue-200 mb-3 font-semibold">
+                    <Sparkles className="w-3 h-3 text-[#0071e3]" />
                     <span>{activeTrack.badge}</span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-3xl text-white font-bold tracking-tight">
+                  <h3 className="font-display text-2xl sm:text-3xl text-[#0e0e11] font-bold tracking-tight">
                     {activeTrack.title}
                   </h3>
-                  <p className="text-sm text-[#94949e] mt-2 leading-relaxed">
+                  <p className="text-sm text-[#515154] mt-2 leading-relaxed">
                     {activeTrack.summary}
                   </p>
                 </div>
 
                 {/* Relevant Core Offers */}
-                <div className="p-4 rounded-2xl bg-white/[0.02] border border-white/[0.06] space-y-2">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#71717a] font-semibold">
+                <div className="p-4 rounded-2xl bg-[#f5f5f7] border border-black/[0.06] space-y-2">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#86868b] font-semibold">
                     RECOMMENDED CORE OFFERS:
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {activeTrack.relevantOffers.map((offer, i) => (
                       <span
                         key={i}
-                        className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-[#16161c] border border-white/[0.08] text-[#f4f4f6]"
+                        className="text-xs font-mono font-medium px-2.5 py-1 rounded-md bg-white border border-black/[0.08] text-[#0e0e11] shadow-xs"
                       >
                         {offer}
                       </span>
@@ -269,12 +269,12 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
 
                 {/* Challenges Addressed */}
                 <div className="space-y-2.5">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-semibold">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-amber-800 font-semibold">
                     COMMON FRICTION SOLVED:
                   </div>
                   {activeTrack.challenges.map((challenge, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs text-[#94949e]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 shrink-0 mt-1.5" />
+                    <div key={i} className="flex items-start gap-2.5 text-xs text-[#515154]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0 mt-1.5" />
                       <span>{challenge}</span>
                     </div>
                   ))}
@@ -282,12 +282,12 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
 
                 {/* System Deliverables */}
                 <div className="space-y-2.5 pt-2">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-white font-semibold">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#0e0e11] font-semibold">
                     WHAT WE DELIVER FOR THIS SECTOR:
                   </div>
                   {activeTrack.deliverables.map((item, i) => (
-                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#f4f4f6]">
-                      <div className="w-4 h-4 rounded-full bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-500/20">
+                    <div key={i} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#0e0e11]">
+                      <div className="w-4 h-4 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5 border border-emerald-200">
                         <Check className="w-2.5 h-2.5" />
                       </div>
                       <span>{item}</span>
@@ -298,7 +298,7 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
 
               {/* Right Column: Custom Gemini Industry Photographic Vignette (5 cols) */}
               <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-white/[0.1] bg-[#0a0a0e] shadow-xl group">
+                <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden border border-black/[0.08] bg-[#f5f5f7] shadow-lg group">
                   <Image
                     src={activeTrack.image}
                     alt={activeTrack.imageAlt}
@@ -307,9 +307,9 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
                     sizes="(max-width: 1024px) 100vw, 40vw"
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-700 select-none"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#101014] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
                   <div className="absolute bottom-3 left-3 right-3 text-left">
-                    <span className="text-[10px] font-mono text-[#2997ff] uppercase tracking-wider block">
+                    <span className="text-[10px] font-mono text-[#38bdf8] uppercase tracking-wider block font-semibold">
                       SECTOR VIGNETTE
                     </span>
                     <span className="text-xs font-semibold text-white">
@@ -319,14 +319,14 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
                 </div>
 
                 {/* Outcome Callout Box */}
-                <div className="p-5 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-left">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#71717a] mb-1">
+                <div className="p-5 rounded-2xl bg-[#f5f5f7] border border-black/[0.06] text-left">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-[#86868b] mb-1">
                     PRIMARY OUTCOME:
                   </div>
-                  <div className="text-base font-bold text-white font-display">
+                  <div className="text-base font-bold text-[#0e0e11] font-display">
                     {activeTrack.focusArea}
                   </div>
-                  <p className="text-xs text-[#94949e] mt-1.5 leading-relaxed">
+                  <p className="text-xs text-[#515154] mt-1.5 leading-relaxed">
                     Designed to eliminate administrative delays and give prospects an effortless way to enquire, book, and buy.
                   </p>
                 </div>
@@ -334,7 +334,7 @@ export default function WhoWeHelp({ onOpenIntake }: { onOpenIntake: () => void }
                 {/* Primary Action Button */}
                 <button
                   onClick={onOpenIntake}
-                  className="w-full graphite-button-primary py-3.5 px-6 text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-500/20"
+                  className="w-full apple-button-primary py-3.5 px-6 text-xs uppercase tracking-wider font-semibold flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <span>Build My Growth Plan for This Sector</span>
                   <ArrowRight className="w-3.5 h-3.5" />

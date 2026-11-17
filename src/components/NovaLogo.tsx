@@ -89,7 +89,7 @@ export default function NovaLogo({
         </svg>
       </div>
 
-      {/* Typography with Apple Kerning & Optical Alignment */}
+      {/* Typography with Precision Optical Alignment */}
       {variant === "full" && (
         <div className={`flex items-baseline leading-none tracking-tight font-display ${textClasses}`}>
           <span

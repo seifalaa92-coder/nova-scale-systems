@@ -19,7 +19,7 @@ const TOASTS: Toast[] = [
     icon: MessageSquare,
     iconColor: "text-emerald-600",
     badge: "WhatsApp Ping",
-    text: "London advisory client booked strategy call in 4s ($5,000 Retainer)",
+    text: "London commercial client booked strategy call in 4s (Qualified Lead)",
     time: "Just now",
   },
   {

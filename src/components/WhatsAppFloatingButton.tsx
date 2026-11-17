@@ -45,17 +45,17 @@ export default function WhatsAppFloatingButton({ onOpenIntake }: { onOpenIntake:
             initial={{ opacity: 0, y: 15, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.9 }}
-            className="absolute bottom-16 right-0 mb-2 w-72 bg-[#101014] text-white rounded-2xl p-4 shadow-2xl border border-white/[0.1] cursor-pointer"
+            className="absolute bottom-16 right-0 mb-2 w-72 bg-white text-[#0e0e11] rounded-2xl p-4 shadow-2xl border border-black/[0.08] cursor-pointer"
             onClick={() => {
               setShowTeaser(false);
               setIsOpen(true);
               setHasInteracted(true);
             }}
           >
-            <div className="flex items-center justify-between pb-2 border-b border-white/[0.08] mb-2.5">
+            <div className="flex items-center justify-between pb-2 border-b border-black/[0.06] mb-2.5">
               <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[11px] font-mono font-bold text-white">
+                <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[11px] font-mono font-bold text-[#0e0e11]">
                   NOVA LIVE WHATSAPP BOT
                 </span>
               </div>
@@ -64,13 +64,13 @@ export default function WhatsAppFloatingButton({ onOpenIntake }: { onOpenIntake:
                   e.stopPropagation();
                   setShowTeaser(false);
                 }}
-                className="text-[#71717a] hover:text-white"
+                className="text-[#86868b] hover:text-[#0e0e11]"
                 aria-label="Close message preview"
               >
                 <X className="w-3.5 h-3.5" />
               </button>
             </div>
-            <p className="text-xs text-[#94949e] leading-relaxed">
+            <p className="text-xs text-[#515154] leading-relaxed">
               👋 <strong>Never lose a client.</strong> Test our 4-second instant WhatsApp lead responder right now.
             </p>
             <div className="mt-2.5 flex items-center justify-between text-[11px] font-semibold text-emerald-600">

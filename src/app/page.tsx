@@ -8,6 +8,8 @@ import Hero from "@/components/Hero";
 import SeeItInAction from "@/components/SeeItInAction";
 import LiveClientRecoveryDemo from "@/components/LiveClientRecoveryDemo";
 import BrandMarquee from "@/components/BrandMarquee";
+import ReelsAdCampaignShowcase from "@/components/ReelsAdCampaignShowcase";
+import GeoSalesAdShowcase from "@/components/GeoSalesAdShowcase";
 import WhoWeHelp from "@/components/WhoWeHelp";
 import BentoGrid from "@/components/BentoGrid";
 import LiveInteractiveStoreDemo from "@/components/LiveInteractiveStoreDemo";
@@ -21,8 +23,8 @@ import WhatsAppFloatingButton from "@/components/WhatsAppFloatingButton";
 import Footer from "@/components/Footer";
 
 export default function HomePage() {
-  // Immediate First Screen — No timed gate blocking arrival
-  const [showIntro, setShowIntro] = useState(false);
+  // Opening Cinematic Video Intro — Plays on arrival with quick skip & controls
+  const [showIntro, setShowIntro] = useState(true);
   const [isIntakeOpen, setIsIntakeOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState<string | undefined>(undefined);
 
@@ -32,14 +34,14 @@ export default function HomePage() {
   };
 
   return (
-    <main className="min-h-screen bg-[#08080a] text-[#f4f4f6] relative selection:bg-[#0071e3] selection:text-white">
+    <main className="min-h-screen bg-[#fbfbfd] text-[#0e0e11] relative selection:bg-[#0071e3] selection:text-white">
       {/* Optional Replayable Opening Cinematic (Shown only when explicitly triggered) */}
       {showIntro && <ActiveTheoryIntro onComplete={() => setShowIntro(false)} />}
 
       {/* Subtle Fluid Interactive Background */}
       <FluidCanvasBackground />
 
-      {/* Sticky Translucent Graphite Navigation — Immediately Accessible on Arrival */}
+      {/* Sticky Translucent Alabaster Navigation — Immediately Accessible on Arrival */}
       <Navbar onOpenIntake={() => handleOpenIntakeWithTier()} />
 
       {/* Flagship Hero Section with Immediate High-Impact Messaging & Gemini Visuals */}
@@ -47,6 +49,12 @@ export default function HomePage() {
 
       {/* Enterprise Partner Software Compatibility Marquee */}
       <BrandMarquee />
+
+      {/* Meta Reels & High-Impact Creative Ad Showcase */}
+      <ReelsAdCampaignShowcase onOpenIntake={() => handleOpenIntakeWithTier()} />
+
+      {/* Geo-Targeted & SEO Local Sales Engine Showcase (Brand New Ad) */}
+      <GeoSalesAdShowcase onOpenIntake={() => handleOpenIntakeWithTier()} />
 
       {/* Repurposed Interactive Experience: Watch an Enquiry Become a Secured Deal */}
       <SeeItInAction onOpenIntake={() => handleOpenIntakeWithTier()} />
@@ -89,6 +97,18 @@ export default function HomePage() {
 
       {/* Floating Interactive WhatsApp Concierge with Live Ping */}
       <WhatsAppFloatingButton onOpenIntake={() => handleOpenIntakeWithTier()} />
+
+      {/* Floating Replay Intro Video Button in Refined Light Glass */}
+      {!showIntro && (
+        <button
+          onClick={() => setShowIntro(true)}
+          className="fixed bottom-24 right-6 z-40 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md text-[#0e0e11] border border-black/[0.12] text-[10px] font-mono shadow-xl hover:border-black/30 transition-all flex items-center gap-1.5 cursor-pointer"
+          title="Replay Cinematic Intro Video"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-[#0071e3] animate-ping" />
+          <span>REPLAY INTRO VIDEO</span>
+        </button>
+      )}
 
       {/* Transparent Business Directory Footer */}
       <Footer />

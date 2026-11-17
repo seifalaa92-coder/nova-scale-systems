@@ -3,16 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --background: #08080a;
-  --foreground: #f4f4f6;
-  --graphite-900: #08080a;
-  --graphite-800: #101014;
-  --graphite-700: #18181f;
-  --graphite-600: #22222b;
-  --graphite-border: rgba(255, 255, 255, 0.08);
-  --graphite-border-hover: rgba(255, 255, 255, 0.18);
+  --background: #fbfbfd;
+  --foreground: #0e0e11;
   --brand-blue: #0071e3;
-  --brand-blue-glow: rgba(0, 113, 227, 0.35);
+  --brand-blue-glow: rgba(0, 113, 227, 0.15);
 }
 
 * {
@@ -38,47 +32,45 @@ body::before {
   height: 100vh;
   pointer-events: none;
   z-index: 99;
-  opacity: 0.035;
+  opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Deep Graphite Card */
+/* Apple Alabaster Card System */
 .graphite-card,
 .luxury-card,
 .apple-card {
-  background: #101014;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 16px 50px -10px rgba(0, 0, 0, 0.6);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 30px -4px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .graphite-card:hover,
 .luxury-card:hover,
 .apple-card:hover {
-  border-color: rgba(255, 255, 255, 0.18);
+  border-color: rgba(0, 0, 0, 0.16);
   transform: translateY(-2px);
-  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.8), 0 0 20px -2px rgba(0, 113, 227, 0.12);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
 }
 
 /* High-Impact Primary Button */
 .graphite-button-primary,
 .luxury-button-primary,
 .apple-button-primary {
-  background: linear-gradient(180deg, #0077ed 0%, #0062c4 100%);
+  background: #0e0e11;
   color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 980px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  box-shadow: 0 4px 20px -2px rgba(0, 113, 227, 0.45);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .graphite-button-primary:hover,
 .luxury-button-primary:hover,
 .apple-button-primary:hover {
-  background: linear-gradient(180deg, #1b8eff 0%, #0071e3 100%);
-  box-shadow: 0 8px 30px -2px rgba(0, 113, 227, 0.65);
+  background: #232329;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
 
@@ -86,20 +78,19 @@ body::before {
 .graphite-button-secondary,
 .luxury-button-secondary,
 .apple-button-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #f4f4f6;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  color: #0e0e11;
   border-radius: 980px;
   font-weight: 500;
-  backdrop-filter: blur(16px);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .graphite-button-secondary:hover,
 .luxury-button-secondary:hover,
 .apple-button-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.24);
+  background: #f4f4f7;
+  border-color: rgba(0, 0, 0, 0.25);
   transform: translateY(-1px);
 }
 
@@ -131,26 +122,22 @@ body::before {
   animation-play-state: paused;
 }
 
-/* Ambient Radial Glows */
-.bg-ambient-glow {
-  background: radial-gradient(circle at 50% 30%, rgba(0, 113, 227, 0.15) 0%, rgba(9, 9, 11, 0) 70%);
+/* Modern Standard Scrollbar with Webkit Fallback */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #d2d2d7 #fbfbfd;
 }
 
-.bg-hero-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.22) 0%, rgba(16, 16, 20, 0.6) 50%, rgba(8, 8, 10, 1) 100%);
-}
-
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #08080a;
+  background: #fbfbfd;
 }
 ::-webkit-scrollbar-thumb {
-  background: #22222b;
+  background: #d2d2d7;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #33333f;
+  background: #b8b8be;
 }

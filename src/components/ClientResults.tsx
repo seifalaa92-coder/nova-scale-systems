@@ -16,11 +16,11 @@ interface CaseScenario {
 const SCENARIOS: CaseScenario[] = [
   {
     number: "01",
-    industry: "Management Advisory & Consulting",
+    industry: "Corporate Professional Services & Law",
     headline: "Consultation Scheduling & Pre-Qualification",
     focusArea: "Website Redesign + Booking Calendar + CRM Intake",
     problem:
-      "Senior partners were spending hours every week coordinating meeting times via email, only to discover that several leads did not meet minimum retainer requirements.",
+      "Partners were spending hours every week coordinating meeting times via email, only to discover that several enquiries were unqualified for their service tiers.",
     solution:
       "Implemented a bespoke conversion website with an integrated calendar and pre-qualification questionnaire, routing only qualified corporate leads directly into partner calendars.",
     deliverablesSummary: [
@@ -66,19 +66,19 @@ const SCENARIOS: CaseScenario[] = [
 
 export default function ClientResults() {
   return (
-    <section id="case-studies" className="py-24 md:py-36 relative bg-[#08080a] text-[#f4f4f6]">
+    <section id="case-studies" className="py-24 md:py-36 relative bg-[#fbfbfd] text-[#0e0e11]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Editorial Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[#2997ff] uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0071e3] uppercase tracking-wider mb-4 font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Representative Operational Scenarios</span>
           </div>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-[-0.038em] leading-[1.06] mb-6">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-[#0e0e11] tracking-[-0.038em] leading-[1.06] mb-6">
             Proven models for <br />
-            <span className="text-[#2997ff]">common business problems.</span>
+            <span className="text-[#0071e3]">common business problems.</span>
           </h2>
-          <p className="text-[#94949e] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#515154] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             These representative implementation models illustrate how different business types combine our website
             design and automation capabilities to address daily operational friction.
           </p>
@@ -89,45 +89,45 @@ export default function ClientResults() {
           {SCENARIOS.map((scenario, idx) => (
             <div
               key={idx}
-              className="graphite-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between bg-[#101014] border border-white/[0.08] shadow-xl hover:border-white/[0.18] transition-all"
+              className="apple-card rounded-3xl p-8 sm:p-10 flex flex-col justify-between bg-white border border-black/[0.08] shadow-md hover:shadow-xl transition-all"
             >
               <div>
-                <div className="flex items-center justify-between text-[11px] font-mono text-[#71717a] uppercase pb-3 border-b border-white/[0.06] mb-6">
+                <div className="flex items-center justify-between text-[11px] font-mono text-[#86868b] uppercase pb-3 border-b border-black/[0.06] mb-6">
                   <span>USE CASE / {scenario.number}</span>
-                  <span className="font-semibold text-white">{scenario.industry}</span>
+                  <span className="font-semibold text-[#0e0e11]">{scenario.industry}</span>
                 </div>
 
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight mb-2">
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-[#0e0e11] tracking-tight mb-2">
                   {scenario.headline}
                 </h3>
-                <div className="text-xs font-mono text-[#2997ff] font-semibold mb-5">
+                <div className="text-xs font-mono text-[#0071e3] font-semibold mb-5">
                   {scenario.focusArea}
                 </div>
 
-                <div className="space-y-4 mb-8 text-xs text-[#94949e] leading-relaxed">
-                  <div className="p-3.5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20">
-                    <span className="font-mono text-[10px] font-bold text-amber-400 uppercase block mb-1">
+                <div className="space-y-4 mb-8 text-xs text-[#515154] leading-relaxed">
+                  <div className="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200/80">
+                    <span className="font-mono text-[10px] font-bold text-amber-800 uppercase block mb-1">
                       CHALLENGE:
                     </span>
-                    <span className="text-amber-200/90">{scenario.problem}</span>
+                    <span className="text-amber-950">{scenario.problem}</span>
                   </div>
-                  <div className="p-3.5 rounded-xl bg-emerald-500/[0.04] border border-emerald-500/20">
-                    <span className="font-mono text-[10px] font-bold text-emerald-400 uppercase block mb-1">
+                  <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200/80">
+                    <span className="font-mono text-[10px] font-bold text-emerald-800 uppercase block mb-1">
                       IMPLEMENTATION:
                     </span>
-                    <span className="text-emerald-200/90">{scenario.solution}</span>
+                    <span className="text-emerald-950">{scenario.solution}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-5 border-t border-white/[0.06]">
-                <span className="font-mono text-[10px] font-bold text-[#71717a] uppercase tracking-wider block mb-2.5">
+              <div className="pt-5 border-t border-black/[0.06]">
+                <span className="font-mono text-[10px] font-bold text-[#86868b] uppercase tracking-wider block mb-2.5">
                   SYSTEM DELIVERABLES:
                 </span>
                 <div className="space-y-2">
                   {scenario.deliverablesSummary.map((item, sIdx) => (
-                    <div key={sIdx} className="flex items-start gap-2 text-xs text-[#d1d1d6]">
-                      <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                    <div key={sIdx} className="flex items-start gap-2 text-xs text-[#515154]">
+                      <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -138,7 +138,7 @@ export default function ClientResults() {
         </div>
 
         {/* Disclaimer Note */}
-        <div className="mt-12 text-center text-xs text-[#71717a] max-w-2xl mx-auto">
+        <div className="mt-12 text-center text-xs text-[#86868b] max-w-2xl mx-auto">
           Illustrative implementation examples. Actual system setup, tools, and timelines depend on your specific
           requirements, existing software accounts, and chosen service scope.
         </div>

@@ -53,19 +53,19 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
   const displayMonthlyLift = businessModel === "services" ? serviceMonthlyLift : ecomMonthlyLift;
 
   return (
-    <section id="simulator" className="py-24 md:py-36 relative bg-[#08080a] text-[#f4f4f6]">
+    <section id="simulator" className="py-24 md:py-36 relative bg-[#fbfbfd] text-[#0e0e11]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-mono text-[#2997ff] uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0071e3] uppercase tracking-wider mb-4 font-semibold">
             <Calculator className="w-3.5 h-3.5" />
             <span>Illustrative Value & ROI Estimator</span>
           </div>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-[-0.038em] leading-[1.06] mb-6">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-[#0e0e11] tracking-[-0.038em] leading-[1.06] mb-6">
             Estimate the impact of <br />
-            <span className="text-[#2997ff]">faster follow-up and conversion.</span>
+            <span className="text-[#0071e3]">faster follow-up and conversion.</span>
           </h2>
-          <p className="text-[#94949e] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#515154] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             Use this interactive calculator to explore how modest improvements in enquiry capture, booking speed,
             and checkout conversion compound over a year.
           </p>
@@ -76,29 +76,29 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
               onClick={() => setBusinessModel("services")}
               className={`px-5 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer ${
                 businessModel === "services"
-                  ? "bg-[#14141e] text-white border border-[#0071e3] shadow-md shadow-blue-500/20"
-                  : "bg-[#101014] text-[#71717a] border border-white/[0.08] hover:text-white hover:border-white/[0.18]"
+                  ? "bg-[#0e0e11] text-white border border-[#0e0e11] shadow-md"
+                  : "bg-white text-[#515154] border border-black/[0.08] hover:text-[#0e0e11]"
               }`}
             >
-              <Briefcase className="w-4 h-4 text-[#2997ff]" />
+              <Briefcase className="w-4 h-4 text-[#0071e3]" />
               <span>Service Business & SME</span>
             </button>
             <button
               onClick={() => setBusinessModel("ecommerce")}
               className={`px-5 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer ${
                 businessModel === "ecommerce"
-                  ? "bg-[#14141e] text-white border border-[#0071e3] shadow-md shadow-blue-500/20"
-                  : "bg-[#101014] text-[#71717a] border border-white/[0.08] hover:text-white hover:border-white/[0.18]"
+                  ? "bg-[#0e0e11] text-white border border-[#0e0e11] shadow-md"
+                  : "bg-white text-[#515154] border border-black/[0.08] hover:text-[#0e0e11]"
               }`}
             >
-              <Store className="w-4 h-4 text-[#2997ff]" />
+              <Store className="w-4 h-4 text-[#0071e3]" />
               <span>Retail / Online Store</span>
             </button>
           </div>
         </div>
 
         {/* Interactive Calculator Card */}
-        <div className="graphite-card rounded-3xl p-6 sm:p-10 md:p-12 border border-white/[0.08] shadow-2xl bg-[#101014] max-w-5xl mx-auto">
+        <div className="apple-card rounded-3xl p-6 sm:p-10 md:p-12 border border-black/[0.08] shadow-xl bg-white max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Sliders Area (7 cols) */}
             <div className="lg:col-span-7 space-y-8">
@@ -107,8 +107,8 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                   {/* Service Slider 1: Monthly Inquiries */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-[#94949e] font-medium">Monthly Inquiries / Quote Requests</span>
-                      <span className="text-base sm:text-lg font-bold font-mono text-white">
+                      <span className="text-[#515154] font-medium">Monthly Inquiries / Quote Requests</span>
+                      <span className="text-base sm:text-lg font-bold font-mono text-[#0e0e11]">
                         {monthlyInquiries} enquiries / mo
                       </span>
                     </div>
@@ -119,9 +119,9 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                       step="5"
                       value={monthlyInquiries}
                       onChange={(e) => setMonthlyInquiries(Number(e.target.value))}
-                      className="w-full h-2 bg-[#1a1a24] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
+                      className="w-full h-2 bg-[#f5f5f7] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
                     />
-                    <div className="flex justify-between text-[11px] text-[#71717a] font-mono">
+                    <div className="flex justify-between text-[11px] text-[#86868b] font-mono">
                       <span>10/mo</span>
                       <span>100/mo</span>
                       <span>200/mo</span>
@@ -131,8 +131,8 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                   {/* Service Slider 2: Average Deal Value */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-[#94949e] font-medium">Average Client / Deal Value</span>
-                      <span className="text-base sm:text-lg font-bold font-mono text-white">
+                      <span className="text-[#515154] font-medium">Average Client / Deal Value</span>
+                      <span className="text-base sm:text-lg font-bold font-mono text-[#0e0e11]">
                         ${clientValue.toLocaleString()}
                       </span>
                     </div>
@@ -143,9 +143,9 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                       step="250"
                       value={clientValue}
                       onChange={(e) => setClientValue(Number(e.target.value))}
-                      className="w-full h-2 bg-[#1a1a24] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
+                      className="w-full h-2 bg-[#f5f5f7] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
                     />
-                    <div className="flex justify-between text-[11px] text-[#71717a] font-mono">
+                    <div className="flex justify-between text-[11px] text-[#86868b] font-mono">
                       <span>$500</span>
                       <span>$7,500</span>
                       <span>$15,000+</span>
@@ -155,8 +155,8 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                   {/* Service Slider 3: Current Close Rate */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-[#94949e] font-medium">Current Close Rate (Estimated)</span>
-                      <span className="text-base sm:text-lg font-bold font-mono text-white">
+                      <span className="text-[#515154] font-medium">Current Close Rate (Estimated)</span>
+                      <span className="text-base sm:text-lg font-bold font-mono text-[#0e0e11]">
                         {currentCloseRate}%
                       </span>
                     </div>
@@ -167,9 +167,9 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                       step="1"
                       value={currentCloseRate}
                       onChange={(e) => setCurrentCloseRate(Number(e.target.value))}
-                      className="w-full h-2 bg-[#1a1a24] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
+                      className="w-full h-2 bg-[#f5f5f7] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
                     />
-                    <div className="flex justify-between text-[11px] text-[#71717a] font-mono">
+                    <div className="flex justify-between text-[11px] text-[#86868b] font-mono">
                       <span>5%</span>
                       <span>25%</span>
                       <span>50%</span>
@@ -181,8 +181,8 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                   {/* E-Com Slider 1: Monthly Visitors */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-[#94949e] font-medium">Monthly Store Visitors</span>
-                      <span className="text-base sm:text-lg font-bold font-mono text-white">
+                      <span className="text-[#515154] font-medium">Monthly Store Visitors</span>
+                      <span className="text-base sm:text-lg font-bold font-mono text-[#0e0e11]">
                         {monthlyVisitors.toLocaleString()} visitors
                       </span>
                     </div>
@@ -193,9 +193,9 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                       step="1000"
                       value={monthlyVisitors}
                       onChange={(e) => setMonthlyVisitors(Number(e.target.value))}
-                      className="w-full h-2 bg-[#1a1a24] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
+                      className="w-full h-2 bg-[#f5f5f7] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
                     />
-                    <div className="flex justify-between text-[11px] text-[#71717a] font-mono">
+                    <div className="flex justify-between text-[11px] text-[#86868b] font-mono">
                       <span>2k</span>
                       <span>50k</span>
                       <span>100k+</span>
@@ -205,8 +205,8 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                   {/* E-Com Slider 2: Average Order Value */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-[#94949e] font-medium">Average Order Value (AOV)</span>
-                      <span className="text-base sm:text-lg font-bold font-mono text-white">
+                      <span className="text-[#515154] font-medium">Average Order Value (AOV)</span>
+                      <span className="text-base sm:text-lg font-bold font-mono text-[#0e0e11]">
                         ${averageOrderValue}
                       </span>
                     </div>
@@ -217,9 +217,9 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                       step="5"
                       value={averageOrderValue}
                       onChange={(e) => setAverageOrderValue(Number(e.target.value))}
-                      className="w-full h-2 bg-[#1a1a24] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
+                      className="w-full h-2 bg-[#f5f5f7] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
                     />
-                    <div className="flex justify-between text-[11px] text-[#71717a] font-mono">
+                    <div className="flex justify-between text-[11px] text-[#86868b] font-mono">
                       <span>$25</span>
                       <span>$250</span>
                       <span>$500+</span>
@@ -229,8 +229,8 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                   {/* E-Com Slider 3: Conversion Rate */}
                   <div className="space-y-3">
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-[#94949e] font-medium">Current Store Conversion Rate</span>
-                      <span className="text-base sm:text-lg font-bold font-mono text-white">
+                      <span className="text-[#515154] font-medium">Current Store Conversion Rate</span>
+                      <span className="text-base sm:text-lg font-bold font-mono text-[#0e0e11]">
                         {currentConversionRate}%
                       </span>
                     </div>
@@ -241,9 +241,9 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
                       step="0.1"
                       value={currentConversionRate}
                       onChange={(e) => setCurrentConversionRate(Number(e.target.value))}
-                      className="w-full h-2 bg-[#1a1a24] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
+                      className="w-full h-2 bg-[#f5f5f7] rounded-lg appearance-none cursor-pointer accent-[#0071e3]"
                     />
-                    <div className="flex justify-between text-[11px] text-[#71717a] font-mono">
+                    <div className="flex justify-between text-[11px] text-[#86868b] font-mono">
                       <span>0.5%</span>
                       <span>2.5%</span>
                       <span>5.0%</span>
@@ -254,47 +254,47 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
             </div>
 
             {/* Projected Outputs Card (5 cols) */}
-            <div className="lg:col-span-5 bg-[#14141e] rounded-2xl p-6 sm:p-8 border border-white/[0.08] text-white flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-5 bg-[#f5f5f7] rounded-2xl p-6 sm:p-8 border border-black/[0.06] text-[#0e0e11] flex flex-col justify-between space-y-6">
               <div>
-                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#2997ff] font-semibold block mb-2">
+                <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#0071e3] font-semibold block mb-2">
                   ILLUSTRATIVE ANNUAL VALUE LIFT
                 </span>
-                <div className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-white mb-2">
+                <div className="font-display text-4xl sm:text-5xl font-bold tracking-tight text-[#0e0e11] mb-2">
                   +${displayAnnualLift.toLocaleString()}
                 </div>
-                <div className="text-xs text-[#94949e]">
+                <div className="text-xs text-[#515154]">
                   Estimated annual revenue gain (~${displayMonthlyLift.toLocaleString()}/mo)
                 </div>
               </div>
 
               {/* Comparison Breakdown */}
-              <div className="space-y-3 py-4 border-y border-white/[0.08] text-xs font-mono">
+              <div className="space-y-3 py-4 border-y border-black/[0.06] text-xs font-mono">
                 {businessModel === "services" ? (
                   <>
-                    <div className="flex justify-between text-[#94949e]">
+                    <div className="flex justify-between text-[#515154]">
                       <span>Baseline Closed Deals:</span>
-                      <span className="text-white">{currentDeals} / mo</span>
+                      <span className="text-[#0e0e11] font-semibold">{currentDeals} / mo</span>
                     </div>
-                    <div className="flex justify-between text-emerald-400">
+                    <div className="flex justify-between text-emerald-700">
                       <span>Projected with Fast Intake:</span>
                       <span className="font-bold">~{projectedDeals} / mo (+{Math.max(0, projectedDeals - currentDeals)})</span>
                     </div>
-                    <div className="flex justify-between text-[#71717a] text-[11px] pt-1">
+                    <div className="flex justify-between text-[#86868b] text-[11px] pt-1">
                       <span>Based on:</span>
                       <span>+20% leads & +20% faster follow-up close</span>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="flex justify-between text-[#94949e]">
+                    <div className="flex justify-between text-[#515154]">
                       <span>Baseline Monthly Orders:</span>
-                      <span className="text-white">{currentOrders} / mo</span>
+                      <span className="text-[#0e0e11] font-semibold">{currentOrders} / mo</span>
                     </div>
-                    <div className="flex justify-between text-emerald-400">
+                    <div className="flex justify-between text-emerald-700">
                       <span>Projected with 1-Click Pay:</span>
                       <span className="font-bold">~{projectedOrders} / mo</span>
                     </div>
-                    <div className="flex justify-between text-[#71717a] text-[11px] pt-1">
+                    <div className="flex justify-between text-[#86868b] text-[11px] pt-1">
                       <span>Projected AOV:</span>
                       <span>~${projectedAOV} (+10% bump)</span>
                     </div>
@@ -305,7 +305,7 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
               {/* Call to Action Button */}
               <button
                 onClick={onOpenIntake}
-                className="w-full graphite-button-primary py-3.5 px-5 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-blue-500/25"
+                className="w-full apple-button-primary py-3.5 px-5 text-xs font-semibold uppercase tracking-wider flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <span>Build My Growth Plan</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -314,8 +314,8 @@ export default function ScaleSimulator({ onOpenIntake }: ScaleSimulatorProps) {
           </div>
 
           {/* Model Assumptions & Disclaimer */}
-          <div className="mt-8 pt-6 border-t border-white/[0.08] flex items-start gap-3 text-[11px] text-[#71717a] leading-relaxed">
-            <ShieldAlert className="w-4 h-4 text-[#2997ff] shrink-0 mt-0.5" />
+          <div className="mt-8 pt-6 border-t border-black/[0.06] flex items-start gap-3 text-[11px] text-[#86868b] leading-relaxed">
+            <ShieldAlert className="w-4 h-4 text-[#0071e3] shrink-0 mt-0.5" />
             <div>
               <strong>Calculator Assumptions & Disclaimer:</strong> Outputs are illustrative estimates based on standard project improvements (assumes a conservative 20% increase in captured inquiries via clearer layouts, and a 20% relative improvement in close rate via prompt follow-up). Actual business outcomes depend on baseline website traffic quality, market demand, offer pricing, and staff sales execution. These projections are not guarantees.
             </div>

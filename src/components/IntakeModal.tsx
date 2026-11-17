@@ -45,12 +45,12 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="relative w-full max-w-2xl bg-[#101014] text-[#f4f4f6] border border-white/[0.1] rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="relative w-full max-w-2xl bg-white text-[#0e0e11] border border-black/[0.08] rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full bg-[#181824] border border-white/[0.08] text-[#94949e] hover:text-white transition-colors cursor-pointer"
+          className="absolute top-6 right-6 p-2 rounded-full bg-[#f5f5f7] border border-black/[0.08] text-[#515154] hover:text-[#0e0e11] transition-colors cursor-pointer"
           aria-label="Close modal"
         >
           <X className="w-5 h-5" />
@@ -60,14 +60,14 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
           <div>
             {/* Modal Header */}
             <div className="mb-8">
-              <div className="inline-flex items-center gap-2 text-xs font-mono text-[#2997ff] bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20 mb-3 font-semibold">
+              <div className="inline-flex items-center gap-2 text-xs font-mono text-[#0071e3] bg-blue-50 px-3 py-1 rounded-full border border-blue-200 mb-3 font-semibold">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>BUILD MY GROWTH PLAN</span>
               </div>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#0e0e11] tracking-tight">
                 Tell us about your business goals.
               </h3>
-              <p className="text-xs sm:text-sm text-[#94949e] mt-1.5 leading-relaxed">
+              <p className="text-xs sm:text-sm text-[#515154] mt-1.5 leading-relaxed">
                 We will review your current website, tools, and enquiry process, then present a clear proposal
                 with defined deliverables, timeline, and transparent pricing.
               </p>
@@ -76,12 +76,12 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
               <div className="flex items-center gap-2 mt-4">
                 <div
                   className={`h-1.5 flex-1 rounded-full transition-all ${
-                    step >= 1 ? "bg-[#0071e3]" : "bg-white/10"
+                    step >= 1 ? "bg-[#0071e3]" : "bg-black/[0.06]"
                   }`}
                 />
                 <div
                   className={`h-1.5 flex-1 rounded-full transition-all ${
-                    step >= 2 ? "bg-[#0071e3]" : "bg-white/10"
+                    step >= 2 ? "bg-[#0071e3]" : "bg-black/[0.06]"
                   }`}
                 />
               </div>
@@ -91,7 +91,7 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
             {step === 1 && (
               <div className="space-y-6 animate-in fade-in slide-in-from-right-4 duration-200">
                 <div>
-                  <label className="block text-xs font-semibold text-[#94949e] uppercase tracking-wider mb-2.5 font-mono">
+                  <label className="block text-xs font-semibold text-[#515154] uppercase tracking-wider mb-2.5 font-mono">
                     1. Your Business Category
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -108,8 +108,8 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                         onClick={() => setBusinessType(type)}
                         className={`p-3 rounded-xl text-left text-xs transition-all border cursor-pointer ${
                           businessType === type
-                            ? "bg-[#141b2b] border-[#0071e3] text-white font-bold shadow-md"
-                            : "bg-[#181824] border-white/[0.08] text-[#94949e] hover:border-white/[0.18] hover:text-white"
+                            ? "bg-[#0e0e11] border-[#0e0e11] text-white font-bold shadow-xs"
+                            : "bg-[#f5f5f7] border-black/[0.06] text-[#515154] hover:border-black/[0.18] hover:text-[#0e0e11]"
                         }`}
                       >
                         {type}
@@ -119,7 +119,7 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#94949e] uppercase tracking-wider mb-2.5 font-mono">
+                  <label className="block text-xs font-semibold text-[#515154] uppercase tracking-wider mb-2.5 font-mono">
                     2. Primary Service or Need
                   </label>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -137,8 +137,8 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                         onClick={() => setPrimaryObjective(obj)}
                         className={`p-3 rounded-xl text-left text-xs transition-all border cursor-pointer ${
                           primaryObjective === obj
-                            ? "bg-[#0d2218] border-emerald-500 text-emerald-200 font-bold shadow-md"
-                            : "bg-[#181824] border-white/[0.08] text-[#94949e] hover:border-white/[0.18] hover:text-white"
+                            ? "bg-[#0e0e11] border-[#0e0e11] text-white font-bold shadow-xs"
+                            : "bg-[#f5f5f7] border-black/[0.06] text-[#515154] hover:border-black/[0.18] hover:text-[#0e0e11]"
                         }`}
                       >
                         {obj}
@@ -148,7 +148,7 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-[#94949e] uppercase tracking-wider mb-2.5 font-mono">
+                  <label className="block text-xs font-semibold text-[#515154] uppercase tracking-wider mb-2.5 font-mono">
                     3. Estimated Start Timeline
                   </label>
                   <div className="grid grid-cols-3 gap-2">
@@ -160,7 +160,7 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                         className={`p-2.5 rounded-xl text-center text-xs transition-all border cursor-pointer ${
                           timeline === time
                             ? "bg-[#0071e3] text-white font-bold border-[#0071e3]"
-                            : "bg-[#181824] border-white/[0.08] text-[#94949e] hover:border-white/[0.18] hover:text-white"
+                            : "bg-[#f5f5f7] border-black/[0.06] text-[#515154] hover:border-black/[0.18] hover:text-[#0e0e11]"
                         }`}
                       >
                         {time}
@@ -173,7 +173,7 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                   <button
                     type="button"
                     onClick={() => setStep(2)}
-                    className="graphite-button-primary px-6 py-3 text-xs font-semibold flex items-center gap-2 shadow-lg cursor-pointer"
+                    className="apple-button-primary px-6 py-3 text-xs font-semibold flex items-center gap-2 shadow-md cursor-pointer"
                   >
                     <span>Next: Contact Details</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -187,7 +187,7 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
               <form onSubmit={handleSubmit} className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-200">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-[#94949e] mb-1 font-mono">
+                    <label className="block text-xs font-medium text-[#515154] mb-1 font-mono">
                       Your Full Name *
                     </label>
                     <input
@@ -196,27 +196,27 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                       placeholder="Jane Doe"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/[0.1] bg-[#181824] text-white text-sm focus:outline-none focus:border-[#0071e3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.08] bg-[#f5f5f7] text-[#0e0e11] text-sm focus:outline-none focus:border-[#0071e3] focus:bg-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-[#94949e] mb-1 font-mono">
+                    <label className="block text-xs font-medium text-[#515154] mb-1 font-mono">
                       Company / Organization Name *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="Acme Advisory Ltd"
+                      placeholder="Acme Growth Ltd"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/[0.1] bg-[#181824] text-white text-sm focus:outline-none focus:border-[#0071e3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.08] bg-[#f5f5f7] text-[#0e0e11] text-sm focus:outline-none focus:border-[#0071e3] focus:bg-white"
                     />
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-medium text-[#94949e] mb-1 font-mono">
+                    <label className="block text-xs font-medium text-[#515154] mb-1 font-mono">
                       Work Email *
                     </label>
                     <input
@@ -225,11 +225,11 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                       placeholder="jane@company.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/[0.1] bg-[#181824] text-white text-sm focus:outline-none focus:border-[#0071e3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.08] bg-[#f5f5f7] text-[#0e0e11] text-sm focus:outline-none focus:border-[#0071e3] focus:bg-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-medium text-[#94949e] mb-1 font-mono">
+                    <label className="block text-xs font-medium text-[#515154] mb-1 font-mono">
                       Phone Number (For direct follow-up)
                     </label>
                     <input
@@ -237,13 +237,13 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                       placeholder="+1 (555) 000-0000"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-xl border border-white/[0.1] bg-[#181824] text-white text-sm focus:outline-none focus:border-[#0071e3]"
+                      className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.08] bg-[#f5f5f7] text-[#0e0e11] text-sm focus:outline-none focus:border-[#0071e3] focus:bg-white"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-[#94949e] mb-1 font-mono">
+                  <label className="block text-xs font-medium text-[#515154] mb-1 font-mono">
                     Current Website URL (if any)
                   </label>
                   <input
@@ -251,12 +251,12 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                     placeholder="https://yourcompany.com"
                     value={formData.currentSite}
                     onChange={(e) => setFormData({ ...formData, currentSite: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-white/[0.1] bg-[#181824] text-white text-sm focus:outline-none focus:border-[#0071e3]"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.08] bg-[#f5f5f7] text-[#0e0e11] text-sm focus:outline-none focus:border-[#0071e3] focus:bg-white"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-[#94949e] mb-1 font-mono">
+                  <label className="block text-xs font-medium text-[#515154] mb-1 font-mono">
                     What is the biggest friction or challenge in your current setup?
                   </label>
                   <textarea
@@ -264,7 +264,7 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                     placeholder="e.g. Website doesn't convert, staff waste hours manually booking calls, leads cool off before we can reply..."
                     value={formData.biggestBottleneck}
                     onChange={(e) => setFormData({ ...formData, biggestBottleneck: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-white/[0.1] bg-[#181824] text-white text-sm focus:outline-none focus:border-[#0071e3] resize-none"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-black/[0.08] bg-[#f5f5f7] text-[#0e0e11] text-sm focus:outline-none focus:border-[#0071e3] focus:bg-white resize-none"
                   />
                 </div>
 
@@ -272,14 +272,14 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
                   <button
                     type="button"
                     onClick={() => setStep(1)}
-                    className="text-xs font-mono text-[#71717a] hover:text-white cursor-pointer"
+                    className="text-xs font-mono text-[#86868b] hover:text-[#0e0e11] cursor-pointer"
                   >
                     ← Back to Step 1
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="graphite-button-primary px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] flex items-center gap-2 shadow-xl shadow-blue-500/25 cursor-pointer disabled:opacity-50"
+                    className="apple-button-primary px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] flex items-center gap-2 shadow-lg cursor-pointer disabled:opacity-50"
                   >
                     {isSubmitting ? (
                       <span>Sending Request...</span>
@@ -297,21 +297,21 @@ export default function IntakeModal({ isOpen, onClose, initialTier }: IntakeModa
         ) : (
           /* Submission Complete Confirmation */
           <div className="py-12 text-center space-y-4 animate-in fade-in zoom-in-95 duration-200">
-            <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto">
               <Check className="w-8 h-8" />
             </div>
-            <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
+            <h3 className="font-display text-2xl sm:text-3xl font-bold text-[#0e0e11]">
               Growth Plan Request Received
             </h3>
-            <p className="text-sm text-[#94949e] max-w-md mx-auto leading-relaxed">
+            <p className="text-sm text-[#515154] max-w-md mx-auto leading-relaxed">
               Thank you, {formData.name || "there"}. We have received your request regarding{" "}
-              <span className="font-semibold text-white">{primaryObjective}</span> for {formData.company || "your company"}.
+              <span className="font-semibold text-[#0e0e11]">{primaryObjective}</span> for {formData.company || "your company"}.
               Our team will review your requirements and reach out within one business day with next steps.
             </p>
             <div className="pt-4">
               <button
                 onClick={handleReset}
-                className="graphite-button-secondary text-xs px-6 py-2.5 font-semibold cursor-pointer"
+                className="apple-button-secondary text-xs px-6 py-2.5 font-semibold cursor-pointer"
               >
                 Close Window
               </button>

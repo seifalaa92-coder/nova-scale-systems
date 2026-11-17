@@ -104,36 +104,36 @@ export default function LiveInteractiveStoreDemo() {
   };
 
   return (
-    <section id="ecommerce" className="py-24 md:py-36 relative bg-[#08080a] text-[#f4f4f6] overflow-hidden">
+    <section id="ecommerce" className="py-24 md:py-36 relative bg-[#fbfbfd] text-[#0e0e11] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20 mb-4">
-            <ShoppingBag className="w-3.5 h-3.5" />
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200 mb-4 font-semibold">
+            <ShoppingBag className="w-3.5 h-3.5 text-emerald-600" />
             <span>INTERACTIVE STORE DEMO</span>
           </div>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.038em] text-white mb-6">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-[-0.038em] text-[#0e0e11] mb-6">
             Experience what we build for modern online stores.
           </h2>
-          <p className="text-[#94949e] text-base md:text-lg leading-relaxed">
+          <p className="text-[#515154] text-base md:text-lg leading-relaxed">
             Interact with our live ecommerce demo below. Test product switching, examine mobile-friendly layouts,
             test 1-click digital wallet checkout, and see practical options for increasing order value.
           </p>
         </div>
 
         {/* Interactive Store Demo Frame */}
-        <div className="graphite-card rounded-3xl p-6 sm:p-10 md:p-12 border border-white/[0.08] relative overflow-hidden shadow-2xl bg-[#101014]">
+        <div className="apple-card rounded-3xl p-6 sm:p-10 md:p-12 border border-black/[0.08] relative overflow-hidden shadow-xl bg-white">
           {/* Top Demo Bar */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-white/[0.08]">
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 mb-8 border-b border-black/[0.06]">
             <div className="flex items-center gap-3">
-              <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
-              <span className="text-xs font-mono text-[#71717a]">
-                SANDBOX DEMO: <span className="text-white font-bold">ONLINE SALES & CHECKOUT FLOW</span>
+              <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+              <span className="text-xs font-mono text-[#515154]">
+                SANDBOX DEMO: <span className="text-[#0e0e11] font-bold">ONLINE SALES & CHECKOUT FLOW</span>
               </span>
             </div>
 
             {/* Product Switcher Pills */}
-            <div className="flex items-center gap-2 p-1.5 bg-[#181824] rounded-2xl border border-white/[0.08]">
+            <div className="flex items-center gap-2 p-1.5 bg-[#f5f5f7] rounded-2xl border border-black/[0.06]">
               {PRODUCTS.map((p, idx) => (
                 <button
                   key={p.id}
@@ -144,8 +144,8 @@ export default function LiveInteractiveStoreDemo() {
                   }}
                   className={`px-4 py-2 rounded-xl text-xs font-medium transition-all cursor-pointer ${
                     selectedProductIndex === idx
-                      ? "bg-[#222232] text-white shadow-md font-bold scale-[1.02]"
-                      : "text-[#71717a] hover:text-white"
+                      ? "bg-[#0e0e11] text-white shadow-md font-bold scale-[1.02]"
+                      : "text-[#515154] hover:text-[#0e0e11]"
                   }`}
                 >
                   {p.name}
@@ -316,18 +316,18 @@ export default function LiveInteractiveStoreDemo() {
                       </span>
                     </div>
 
-                    <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">{product.name}</h3>
-                    <p className="text-sm text-[#94949e] mt-1.5 leading-relaxed">{product.tagline}</p>
-                    <div className="text-3xl font-extrabold text-white mt-4 font-mono">
+                    <h3 className="text-3xl sm:text-4xl font-bold text-[#0e0e11] tracking-tight">{product.name}</h3>
+                    <p className="text-sm text-[#515154] mt-1.5 leading-relaxed">{product.tagline}</p>
+                    <div className="text-3xl font-extrabold text-[#0e0e11] mt-4 font-mono">
                       ${product.price.toLocaleString()}
                     </div>
                   </div>
 
                   {/* Material / Color Finish Picker with Micro-Interactions */}
                   <div className="space-y-2.5">
-                    <label className="text-xs font-semibold text-[#94949e] uppercase tracking-wider flex items-center justify-between">
-                      <span>Finish: <strong className="text-white">{activeColor.name}</strong></span>
-                      <span className="text-[11px] text-[#2997ff] font-normal">Physical Vapor Deposition</span>
+                    <label className="text-xs font-semibold text-[#515154] uppercase tracking-wider flex items-center justify-between">
+                      <span>Finish: <strong className="text-[#0e0e11]">{activeColor.name}</strong></span>
+                      <span className="text-[11px] text-[#0071e3] font-normal">Physical Vapor Deposition</span>
                     </label>
                     <div className="flex items-center gap-3">
                       {product.colors.map((c, i) => (
@@ -336,10 +336,10 @@ export default function LiveInteractiveStoreDemo() {
                           onClick={() => setSelectedColorIndex(i)}
                           className={`w-10 h-10 rounded-full transition-all flex items-center justify-center cursor-pointer ${
                             selectedColorIndex === i
-                              ? "ring-2 ring-[#0071e3] ring-offset-2 ring-offset-[#101014] scale-110 shadow-lg"
+                              ? "ring-2 ring-[#0071e3] ring-offset-2 ring-offset-white scale-110 shadow-md"
                               : "opacity-80 hover:opacity-100 hover:scale-105"
                           }`}
-                          style={{ backgroundColor: c.hex, border: "2px solid rgba(255,255,255,0.15)" }}
+                          style={{ backgroundColor: c.hex, border: "2px solid rgba(0,0,0,0.1)" }}
                           title={c.name}
                         >
                           {selectedColorIndex === i && <Check className="w-4 h-4 text-white drop-shadow" />}
@@ -350,19 +350,19 @@ export default function LiveInteractiveStoreDemo() {
 
                   {/* Quantity selector */}
                   <div className="flex items-center gap-4">
-                    <span className="text-xs text-[#94949e] font-medium">Quantity:</span>
-                    <div className="flex items-center bg-[#181824] border border-white/[0.08] rounded-xl px-2 py-1 shadow-xs">
+                    <span className="text-xs text-[#515154] font-medium">Quantity:</span>
+                    <div className="flex items-center bg-[#f5f5f7] border border-black/[0.06] rounded-xl px-2 py-1 shadow-xs">
                       <button
                         onClick={() => setCartCount(Math.max(1, cartCount - 1))}
-                        className="p-1 text-[#71717a] hover:text-white cursor-pointer"
+                        className="p-1 text-[#515154] hover:text-[#0e0e11] cursor-pointer"
                         aria-label="Decrease quantity"
                       >
                         <Minus className="w-3.5 h-3.5" />
                       </button>
-                      <span className="px-4 text-xs font-mono font-bold text-white">{cartCount}</span>
+                      <span className="px-4 text-xs font-mono font-bold text-[#0e0e11]">{cartCount}</span>
                       <button
                         onClick={() => setCartCount(cartCount + 1)}
-                        className="p-1 text-[#71717a] hover:text-white cursor-pointer"
+                        className="p-1 text-[#515154] hover:text-[#0e0e11] cursor-pointer"
                         aria-label="Increase quantity"
                       >
                         <Plus className="w-3.5 h-3.5" />
@@ -375,40 +375,40 @@ export default function LiveInteractiveStoreDemo() {
                     onClick={() => setIncludeWarranty(!includeWarranty)}
                     className={`p-4 rounded-2xl border cursor-pointer transition-all flex items-center justify-between ${
                       includeWarranty
-                        ? "bg-[#141b2b] border-[#0071e3] shadow-md text-white"
-                        : "bg-[#181824] border-white/[0.08] text-[#94949e] hover:border-white/[0.18]"
+                        ? "bg-blue-50/70 border-[#0071e3] shadow-sm text-[#0e0e11]"
+                        : "bg-[#f5f5f7] border-black/[0.06] text-[#515154] hover:border-black/[0.18]"
                     }`}
                   >
                     <div className="flex items-center gap-3.5">
                       <div
                         className={`w-5 h-5 rounded-md flex items-center justify-center border transition-all ${
-                          includeWarranty ? "bg-[#0071e3] border-[#0071e3] text-white" : "border-white/20 bg-white/5"
+                          includeWarranty ? "bg-[#0071e3] border-[#0071e3] text-white" : "border-black/20 bg-white"
                         }`}
                       >
                         {includeWarranty && <Check className="w-3.5 h-3.5" />}
                       </div>
                       <div>
-                        <div className="text-xs font-bold text-white flex items-center gap-1.5">
-                          <Shield className="w-3.5 h-3.5 text-[#2997ff]" />
+                        <div className="text-xs font-bold text-[#0e0e11] flex items-center gap-1.5">
+                          <Shield className="w-3.5 h-3.5 text-[#0071e3]" />
                           <span>Nova Care+ 2-Year Express Replacement</span>
                         </div>
-                        <div className="text-[11px] text-[#71717a]">Accidental damage coverage, zero deductible ($49)</div>
+                        <div className="text-[11px] text-[#86868b]">Accidental damage coverage, zero deductible ($49)</div>
                       </div>
                     </div>
-                    <span className="text-xs font-mono font-bold text-emerald-400">+$49</span>
+                    <span className="text-xs font-mono font-bold text-emerald-700">+$49</span>
                   </div>
 
                   {/* Pricing Breakdown & Checkout Action */}
-                  <div className="pt-2 border-t border-white/[0.08] space-y-3.5">
+                  <div className="pt-2 border-t border-black/[0.06] space-y-3.5">
                     <div className="flex justify-between items-center text-sm">
-                      <span className="text-[#94949e] font-medium">Total Checkout Amount:</span>
-                      <span className="text-2xl font-extrabold text-white font-mono">${subtotal.toLocaleString()}</span>
+                      <span className="text-[#515154] font-medium">Total Checkout Amount:</span>
+                      <span className="text-2xl font-extrabold text-[#0e0e11] font-mono">${subtotal.toLocaleString()}</span>
                     </div>
 
                     <button
                       onClick={handleSimulateCheckout}
                       disabled={isProcessingCheckout}
-                      className="w-full graphite-button-primary py-4 text-sm font-semibold flex items-center justify-center gap-2 group shadow-xl shadow-blue-500/25 active:scale-95 cursor-pointer"
+                      className="w-full apple-button-primary py-4 text-sm font-semibold flex items-center justify-center gap-2 group shadow-md active:scale-95 cursor-pointer"
                     >
                       {isProcessingCheckout ? (
                         <div className="flex items-center gap-2 text-white">
@@ -449,7 +449,7 @@ export default function LiveInteractiveStoreDemo() {
                   <div className="p-4 rounded-xl bg-white border border-emerald-200 text-left text-xs font-mono space-y-1.5 max-w-sm mx-auto shadow-xs">
                     <div className="text-[#6e6e73]">TRANSACTION: #NVS-98421</div>
                     <div className="text-[#1d1d1f] font-bold">ITEM: {product.name} (x{cartCount})</div>
-                    <div className="text-emerald-700 font-bold">TOTAL: ${subtotal.toLocaleString()} (PAID via Pay)</div>
+                    <div className="text-emerald-700 font-bold">TOTAL: ${subtotal.toLocaleString()} (PAID via 1-Click Express)</div>
                     <div className="text-blue-700">ESTIMATED FULFILLMENT: 24 Hours</div>
                   </div>
                   <button

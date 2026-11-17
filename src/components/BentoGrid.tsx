@@ -166,19 +166,19 @@ const SERVICES: ServiceOffer[] = [
 
 export default function BentoGrid() {
   return (
-    <section id="services" className="py-24 md:py-36 relative bg-[#08080a] text-[#f4f4f6]">
+    <section id="services" className="py-24 md:py-36 relative bg-[#fbfbfd] text-[#0e0e11]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.04] border border-white/[0.08] text-xs font-mono text-[#2997ff] uppercase tracking-wider mb-4">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-mono text-[#0071e3] uppercase tracking-wider mb-4 font-semibold">
             <Globe className="w-3.5 h-3.5" />
             <span>Our 6 Core Capabilities</span>
           </div>
-          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white tracking-[-0.038em] leading-[1.06] mb-6">
+          <h2 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-[#0e0e11] tracking-[-0.038em] leading-[1.06] mb-6">
             Clear solutions built for <br />
-            <span className="text-[#2997ff]">measurable business growth.</span>
+            <span className="text-[#0071e3]">measurable business growth.</span>
           </h2>
-          <p className="text-[#94949e] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+          <p className="text-[#515154] text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
             We organize our work around six focused outcomes. No confusing technical jargon—just reliable digital systems
             that help your business capture leads, save hours, and win customers.
           </p>
@@ -196,21 +196,21 @@ export default function BentoGrid() {
                 viewport={{ once: true }}
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.3 }}
-                className="graphite-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between bg-[#101014] border border-white/[0.08] shadow-xl hover:border-white/[0.18] transition-all group overflow-hidden"
+                className="apple-card rounded-3xl p-6 sm:p-7 flex flex-col justify-between bg-white border border-black/[0.08] shadow-md hover:shadow-xl transition-all group overflow-hidden"
               >
                 <div>
                   {/* Top Meta Bar */}
-                  <div className="flex items-center justify-between pb-3 border-b border-white/[0.06] mb-4">
-                    <span className="text-[11px] font-mono tracking-widest text-[#71717a]">
+                  <div className="flex items-center justify-between pb-3 border-b border-black/[0.06] mb-4">
+                    <span className="text-[11px] font-mono tracking-widest text-[#86868b]">
                       OFFER / {service.number}
                     </span>
-                    <span className="text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-[#2997ff] border border-blue-500/20">
+                    <span className="text-[10px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-[#0071e3] border border-blue-200">
                       {service.badge}
                     </span>
                   </div>
 
                   {/* Visual Asset Vignette */}
-                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-5 border border-white/[0.08] bg-[#0c0c10]">
+                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden mb-5 border border-black/[0.08] bg-[#f5f5f7]">
                     <Image
                       src={service.image}
                       alt={service.imageAlt}
@@ -219,51 +219,51 @@ export default function BentoGrid() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover object-center group-hover:scale-105 transition-transform duration-500 select-none"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#101014] via-transparent to-transparent opacity-60" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-40" />
                   </div>
 
                   {/* Icon & Title */}
                   <div className="flex items-center gap-3.5 mb-3">
-                    <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/[0.08] flex items-center justify-center shrink-0 text-[#2997ff]">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center shrink-0 text-[#0071e3]">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <h3 className="font-display text-xl sm:text-2xl font-bold text-white tracking-tight">
+                    <h3 className="font-display text-xl sm:text-2xl font-bold text-[#0e0e11] tracking-tight">
                       {service.title}
                     </h3>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-[#94949e] leading-relaxed mb-5">
+                  <p className="text-xs sm:text-sm text-[#515154] leading-relaxed mb-5">
                     {service.summary}
                   </p>
 
                   {/* Who It Suits */}
-                  <div className="mb-3.5 p-3.5 rounded-2xl bg-white/[0.02] border border-white/[0.06] text-xs">
-                    <span className="font-mono text-[10px] font-semibold text-[#71717a] uppercase block mb-1">
+                  <div className="mb-3.5 p-3.5 rounded-2xl bg-[#f5f5f7] border border-black/[0.06] text-xs">
+                    <span className="font-mono text-[10px] font-semibold text-[#86868b] uppercase block mb-1">
                       BEST SUITED FOR:
                     </span>
-                    <span className="text-[#f4f4f6] font-medium leading-snug block">
+                    <span className="text-[#0e0e11] font-medium leading-snug block">
                       {service.whoItSuits}
                     </span>
                   </div>
 
                   {/* Problem Solved */}
-                  <div className="mb-5 p-3.5 rounded-2xl bg-amber-500/[0.04] border border-amber-500/20 text-xs">
-                    <span className="font-mono text-[10px] font-semibold text-amber-400 uppercase block mb-1">
+                  <div className="mb-5 p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200/80 text-xs">
+                    <span className="font-mono text-[10px] font-semibold text-amber-800 uppercase block mb-1">
                       THE PROBLEM WE SOLVE:
                     </span>
-                    <span className="text-amber-200/90 leading-snug block">
+                    <span className="text-amber-950 leading-snug block">
                       {service.problemSolved}
                     </span>
                   </div>
 
                   {/* Deliverables Checklist */}
                   <div className="space-y-2 mb-6">
-                    <span className="font-mono text-[10px] font-semibold text-[#71717a] uppercase tracking-wider block mb-2">
+                    <span className="font-mono text-[10px] font-semibold text-[#86868b] uppercase tracking-wider block mb-2">
                       WHAT WE DELIVER:
                     </span>
                     {service.deliverables.map((item, idx) => (
-                      <div key={idx} className="flex items-start gap-2.5 text-xs text-[#d1d1d6]">
-                        <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <div key={idx} className="flex items-start gap-2.5 text-xs text-[#515154]">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
                         <span className="leading-tight">{item}</span>
                       </div>
                     ))}
@@ -271,10 +271,10 @@ export default function BentoGrid() {
                 </div>
 
                 {/* Bottom Action Anchor */}
-                <div className="pt-4 border-t border-white/[0.06] mt-2">
+                <div className="pt-4 border-t border-black/[0.06] mt-2">
                   <a
                     href="#who-we-help"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#2997ff] hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0071e3] hover:text-[#0077ed] transition-colors"
                   >
                     <span>See industry applications</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -286,10 +286,10 @@ export default function BentoGrid() {
         </div>
 
         {/* Integration Dependency Notice */}
-        <div className="mt-12 p-5 sm:p-6 rounded-2xl bg-[#101014] border border-white/[0.08] shadow-xl max-w-4xl mx-auto flex items-start gap-4 text-xs text-[#94949e] leading-relaxed">
-          <ShieldAlert className="w-5 h-5 text-[#2997ff] shrink-0 mt-0.5" />
+        <div className="mt-12 p-5 sm:p-6 rounded-2xl bg-white border border-black/[0.08] shadow-md max-w-4xl mx-auto flex items-start gap-4 text-xs text-[#515154] leading-relaxed">
+          <ShieldAlert className="w-5 h-5 text-[#0071e3] shrink-0 mt-0.5" />
           <div>
-            <span className="font-semibold text-white block mb-1">
+            <span className="font-semibold text-[#0e0e11] block mb-1">
               Software Integration & Account Access Terms:
             </span>
             <p>

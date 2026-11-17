@@ -46,7 +46,7 @@ const DEMOS: WorkflowDemo[] = [
     metric3: { label: "Meeting Attendance", val: "Improved", sub: "Automated email & SMS reminders" },
     metric4: { label: "Staff Admin Saved", val: "10-15 hrs/wk", sub: "Reduced manual scheduling tag" },
     activeEvent: {
-      client: "Corporate Advisory Client",
+      client: "Commercial Operations Client",
       action: "Consultation Call Booked",
       amount: "Qualified Lead",
       speed: "Integrated Calendar",
