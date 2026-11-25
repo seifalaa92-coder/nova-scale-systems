@@ -249,17 +249,38 @@ export async function POST(req: NextRequest) {
           parts: [{ text: query }],
         });
 
-        const response = await ai.models.generateContent({
-          model: "gemini-2.5-flash",
-          config: {
-            systemInstruction: NOVA_SYSTEM_PROMPT,
-            temperature: 0.7,
-            maxOutputTokens: 300,
-          },
-          contents: historyContents,
-        });
+        const modelsToTry = [
+          "gemini-3.5-flash",
+          "gemini-3.7-flash",
+          "gemini-3.8-flash",
+          "gemini-3.1-flash-lite",
+        ];
+        let generatedText = "";
 
-        const generatedText = response.text || "";
+        for (const modelName of modelsToTry) {
+          try {
+            const response = await ai.models.generateContent({
+              model: modelName,
+              config: {
+                systemInstruction: NOVA_SYSTEM_PROMPT,
+                temperature: 0.7,
+                maxOutputTokens: 1000,
+                thinkingConfig: { thinkingBudget: 0 },
+              },
+              contents: historyContents,
+            });
+            if (response.text) {
+              generatedText = response.text;
+              break;
+            }
+          } catch (modelErr) {
+            console.warn(`Model ${modelName} failed, trying next model:`, modelErr);
+          }
+        }
+
+        if (!generatedText) {
+          throw new Error("All Gemini models failed or returned empty text");
+        }
         const isArabic = /[\u0600-\u06FF]/.test(generatedText);
 
         return NextResponse.json({
